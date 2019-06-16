@@ -39,7 +39,7 @@
                   <td style="text-align:center;"><h6>{{$product->description}}</h6></td>
                   <td style="text-align:center;"><h6>{{$product->price}} $</h6></td>
                   <td style="text-align:center;"><h6><img style="width:50px;" src="{{URL::to('img/backend_img/products/small/'.$product->image)}}"></h6></td>
-                  <td style="text-align:center;"class="center"><a href="#myModal{{$product->id}}" data-toggle="modal" class="btn btn-success">View</a> <a href="{{route('getadd.attributes',[$product->id])}}" class="btn btn-warning">add attribute</a> <a href="{{route('getedit.product',[$product->id])}}" class="btn btn-primary">Edit</a> <a onclick="return confirm('Are you sure ?')" href="{{route('delete.product',[$product->id])}}" class="btn btn-danger">Delete</a></td>
+                  <td style="text-align:center;"class="center"><a href="{{route('getadd.images',[$product->id])}}" class="btn btn-secondary">add image</a> <a href="#myModal{{$product->id}}" data-toggle="modal" class="btn btn-success">View</a> <a href="{{route('getadd.attributes',[$product->id])}}" class="btn btn-warning">add attribute</a> <a href="{{route('getedit.product',[$product->id])}}" class="btn btn-primary">Edit</a> <a onclick="return confirm('Are you sure ?')" href="{{route('delete.product',[$product->id])}}" class="btn btn-danger">Delete</a></td>
                 </tr>
                 <!-- ----------view product modal------- -->
                 <div id="myModal{{$product->id}}" class="modal hide">

@@ -22,6 +22,12 @@
         <li><a href="{{route('get.categories')}}">View Categories</a></li>
       </ul>
     </li>
+    <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Coupons</span></a>
+      <ul>
+        <li><a href="{{route('get.addCoupon')}}">Add Coupon</a></li>
+        <li><a href="{{route('view.Coupons')}}">View Coupons</a></li>
+      </ul>
+    </li>
   </ul>
 </div>
 <!--sidebar-menu-->

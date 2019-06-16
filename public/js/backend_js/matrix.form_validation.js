@@ -141,7 +141,8 @@ $(document).ready(function(){
 				required:true
 			},
 			product_name:{
-				required:true
+				required:true,
+				max:24
 			},
 			product_code:{
 				required:true,
@@ -247,3 +248,4 @@ $(document).ready(function(){
 		});
 	});
 });
+

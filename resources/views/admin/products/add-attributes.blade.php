@@ -41,7 +41,7 @@
                         <input type="hidden" name="product_id" id="product_id"/>
                         <input required type="text" name="sku[]" id="sku" placeholder="SKU"style="width:120px;"/>
                         <input required type="text" name="size[]" id="sku" placeholder="size"style="width:120px;"/>
-                        <input required type="text" name="price[]" id="price" placeholder="price"style="width:120px;"/>
+                        <input required type="text" name="price[]" id="price" value="{{$product->price}}" placeholder="price"style="width:120px;"/>
                         <input required type="text" name="stock[]" id="stock" placeholder="stock"style="width:120px;"/>
                         <a href="javascript:void(0);" class="add_button icon-plus" title="Add field"></a>
                     </div>

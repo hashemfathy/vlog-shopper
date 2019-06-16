@@ -13,8 +13,12 @@
 
 Route::get('/','IndexController@index')->name('get.index'); 
 Route::get('/get-product-price','ProductsController@getProductPrice')->name('get.productPrice');
-Route::get('/{name}','ProductsController@products')->name('get.products');
 Route::get('/product-details/{id}','ProductsController@getDetails')->name('get.details');
+Route::post('/add-cart','ProductsController@addTocart')->name('add.cart');
+Route::get('/cartProducts','ProductsController@cartProducts')->name('get.cart');
+Route::get('/cart/delete-product/{id}','ProductsController@deleteCartProduct')->name('delete.productCart');
+Route::get('/cart/update-quantity/{id}/{quantity}','ProductsController@updateCartQuantity')->name('update.quantity');
+
 
 Route::get('/admin','AdminController@getAdminLogin')->name('admin.getlogin');
 Route::post('/admin','AdminController@postAdminLogin')->name('admin.postlogin');
@@ -39,11 +43,20 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/admin/edit-product/{product}','ProductsController@getEditProduct')->name('getedit.product');
     Route::post('/admin/edit-product/{id}','ProductsController@updateProduct')->name('update.product');
     Route::get('/admin/delete-product/{product}','ProductsController@deleteProduct')->name('delete.product');
-  // -------Products_Attributes Routes --------------//
-  Route::get('/admin/add-attributes/{id}','ProductsController@getAddAttributes')->name('getadd.attributes');
-  Route::post('/admin/add-attributes/{id}','ProductsController@addAttributes')->name('add.attributes');
-  Route::post('/admin/edit-attribute/{id}','ProductsController@updateAttribute')->name('update.attribute');
-  Route::get('/admin/delete-attribute/{attribute}','ProductsController@deleteAttribute')->name('delete.attribute');
+    Route::get('/admin/add-images/{id}','ProductsController@getAddImages')->name('getadd.images');
+    Route::post('/admin/add-images/{id}','ProductsController@addImages')->name('add.images');
+    Route::get('/admin/delete-image/{id}','ProductsController@deleteImage')->name('delete.image');
+    // -------Products_Attributes Routes --------------//
+    Route::get('/admin/add-attributes/{id}','ProductsController@getAddAttributes')->name('getadd.attributes');
+    Route::post('/admin/add-attributes/{id}','ProductsController@addAttributes')->name('add.attributes');
+    Route::post('/admin/edit-attribute/{id}','ProductsController@updateAttribute')->name('update.attribute');
+    Route::get('/admin/delete-attribute/{attribute}','ProductsController@deleteAttribute')->name('delete.attribute');
+    // -------Coupons Routes --------------//
+    Route::get('/admin/add-coupon','CouponsController@getaddCoupon')->name('get.addCoupon');
+    Route::post('/admin/add-coupon','CouponsController@addCoupon')->name('add.Coupon');
+    Route::get('/admin/view-coupons','CouponsController@viewCoupons')->name('view.Coupons');
+
+
 
 
 
@@ -58,3 +71,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/{name}','ProductsController@products')->name('get.CategoryProducts');
+
+

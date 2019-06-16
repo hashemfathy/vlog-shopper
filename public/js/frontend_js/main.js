@@ -29,7 +29,8 @@ $(document).ready(function(){
 	});
 });
 $(document).ready(function(){
-	$('#product-sku').change(function(){
+	//--------- change price with size-------------
+	$('#product_sku').change(function(){
 			var attributesSku=$(this).val();
 			$.ajax({
 					type:'get',
@@ -38,9 +39,16 @@ $(document).ready(function(){
 					success:function(resp){
 						// alert(resp);
 						$('#productPrice').html("US $"+resp);
+						$('#price').val(resp);
 					},error:function(){
 						alert('error');
 					}
 			});
 	});
+	//--------- change mainImage with alternateImage-------------
+	$('.changeImage').click(function(){
+		var newimage=$(this).attr('src');
+		$('.mainImage').attr('src',newimage);
+	});
+	
 });
